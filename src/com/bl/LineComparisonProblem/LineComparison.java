@@ -22,10 +22,30 @@ public class LineComparison {
         y2=value.nextFloat();
 
     }
+
     public double getLengthOfLine()
     {
-        double lengthofLine = Math.sqrt(Math.pow((x2-x1),2)+Math.pow((y2-y1),2));
-        return lengthofLine;
+        double lengthOfLine = Math.sqrt(Math.pow((x2-x1),2)+Math.pow((y2-y1),2));
+        return lengthOfLine;
+    }
+
+    public static String compareTo(double line1,double line2)
+    {
+        if(line1 == line2)
+        {
+            return "Line1 = Line2";
+        }
+        else
+        {
+            if(line1 > line2)
+            {
+                return "Line 1 > Line 2";
+            }
+            else
+            {
+                return "Line 1 < Line 2";
+            }
+        }
     }
 
     public static void main(String[] args) {
@@ -39,15 +59,17 @@ public class LineComparison {
         value2.linePoint();
 
         double line1Length = value1.getLengthOfLine();
-        System.out.println("Length of Line 1 = "+line1Length);
-
         double line2Length = value2.getLengthOfLine();
-        System.out.println("Length of Line 2 = "+line2Length);
 
-        if(line1Length == line2Length) {
+        System.out.println("Length of Line 1 = " + line1Length);
+        System.out.println("Length of Line 2 = " + line2Length);
+
+        System.out.println(compareTo(line1Length,line2Length));
+
+       /* if(line1Length == line2Length) {
             System.out.println("Length of Line 1 = Length of Line 2");
         } else {
             System.out.println("Length of Line 1 =! Length of Line 2");
-        }
+        } */
     }
 }
